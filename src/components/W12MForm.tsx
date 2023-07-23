@@ -4,6 +4,7 @@ import SpeciesName from "./SpeciesName";
 import PlanetName from "./PlanetName";
 import NumberofBeings from "./NumberOfBeings";
 import Arithmetic from "./Arithmetic";
+import ReasonForSparing from "./ReasonForSparing";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState<string>("Humans"); // Define variable using useState hook.
@@ -11,6 +12,7 @@ const W12MForm = () => {
   const [planetName, setPlanetName] = useState<string>("Earth");
   const [numberOfBeings, setNumberOfBeings] = useState<number>(1);
   const [arithmetic, setArithmetic] = useState<string>("Not 4");
+  const [reasonForSparing, setReasonForSparing] = useState<string>("");
 
   return (
     <section className="w12MForm">
@@ -40,6 +42,12 @@ const W12MForm = () => {
         {speciesName} are from the planet {planetName} and there are{" "}
         {numberOfBeings} of them, and they know that 2 + 2 is {arithmetic}.
       </p>
+      <ReasonForSparing
+        reasonForSparing={reasonForSparing}
+        onChangeReasonForSparing={(e: any) =>
+          setReasonForSparing(e.target.value)
+        }
+      />
     </section>
   );
 };
