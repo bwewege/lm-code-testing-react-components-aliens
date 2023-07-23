@@ -2,11 +2,13 @@ import { useState } from "react"; // import useState to manage state in a functi
 import W12MHeader from "./W12MHeader";
 import SpeciesName from "./SpeciesName";
 import PlanetName from "./PlanetName";
+import NumberofBeings from "./NumberOfBeings";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState<string>("Humans"); // Define variable using useState hook.
   // It returns an array with two elements: the state variable (speciesName) and a function (setSpeciesName) to update it
   const [planetName, setPlanetName] = useState<string>("Earth");
+  const [numberOfBeings, setNumberOfBeings] = useState<number>(1);
 
   return (
     <section className="w12MForm">
@@ -21,6 +23,14 @@ const W12MForm = () => {
         planetName={planetName}
         onChangePlanetName={(e: any) => setPlanetName(e.target.value)}
       />
+      <NumberofBeings
+        numberOfBeings={numberOfBeings}
+        onChangeNumberOfBeings={(e: any) => setNumberOfBeings(e.target.value)}
+      />
+      <p>
+        {speciesName} are from the planet {planetName} and there are{" "}
+        {numberOfBeings} of them.
+      </p>
     </section>
   );
 };
