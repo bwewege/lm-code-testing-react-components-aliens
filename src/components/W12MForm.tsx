@@ -5,6 +5,7 @@ import PlanetName from "./PlanetName";
 import NumberofBeings from "./NumberOfBeings";
 import Arithmetic from "./Arithmetic";
 import ReasonForSparing from "./ReasonForSparing";
+import Submit from "./Submit";
 
 const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState<string>("Humans"); // Define variable using useState hook.
@@ -13,6 +14,15 @@ const W12MForm = () => {
   const [numberOfBeings, setNumberOfBeings] = useState<number>(1);
   const [arithmetic, setArithmetic] = useState<string>("Not 4");
   const [reasonForSparing, setReasonForSparing] = useState<string>("");
+
+  const handleSubmit = () => {
+    console.log("Form Data:");
+    console.log("Species Name: ", speciesName);
+    console.log("Planet Name: ", planetName);
+    console.log("Number of Beings: ", numberOfBeings);
+    console.log("What is 2 + 2?: ", arithmetic);
+    console.log("Reason for sparing: ", reasonForSparing);
+  };
 
   return (
     <section className="w12MForm">
@@ -48,6 +58,8 @@ const W12MForm = () => {
           setReasonForSparing(e.target.value)
         }
       />
+      <p></p>
+      <Submit onClick={handleSubmit} />
     </section>
   );
 };
