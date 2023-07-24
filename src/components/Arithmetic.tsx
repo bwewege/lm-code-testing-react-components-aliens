@@ -8,7 +8,7 @@ const Arithmetic: React.FC<ArithmeticProps> = ({
   onChangeHandler,
 }) => (
   <>
-    <label htmlFor="arithmetic">What is 2 + 2: </label>
+    <label htmlFor="arithmetic">What is 2 + 2?: </label>
     <select id="arithmetic" value={arithmetic} onChange={onChangeHandler}>
       <option value="4">4</option>
       <option value="Not 4">Not 4</option>
