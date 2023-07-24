@@ -8,10 +8,10 @@ import ReasonForSparing from "./ReasonForSparing";
 import Submit from "./Submit";
 
 const W12MForm = () => {
-  const [speciesName, setSpeciesName] = useState<string>("Humans"); // Define variable using useState hook.
+  const [speciesName, setSpeciesName] = useState<string>(""); // Define variable using useState hook.
   // It returns an array with two elements: the state variable (speciesName) and a function (setSpeciesName) to update it
-  const [planetName, setPlanetName] = useState<string>("Earth");
-  const [numberOfBeings, setNumberOfBeings] = useState<string>("1");
+  const [planetName, setPlanetName] = useState<string>("");
+  const [numberOfBeings, setNumberOfBeings] = useState<string>("0");
   const [arithmetic, setArithmetic] = useState<string>("Not 4");
   const [reasonForSparing, setReasonForSparing] = useState<string>("");
 
@@ -29,24 +29,24 @@ const W12MForm = () => {
       <W12MHeader />
       <SpeciesName
         speciesName={speciesName}
-        onChangeHandler={(e: any) => setSpeciesName(e.target.value)} // Renders the SpeciesName component.
+        onChangeHandler={(value) => setSpeciesName(value)} // Renders the SpeciesName component.
         // Passes speciesName state variable and onChangeSpeciesName function as props.
         // OnChangeSpeciesNBame function updates the speciesName state based on input value
       />
       <p></p>
       <PlanetName
         planetName={planetName}
-        onChangeHandler={(e: any) => setPlanetName(e.target.value)}
+        onChangeHandler={(value) => setPlanetName(value)}
       />
       <p></p>
       <NumberofBeings
         numberOfBeings={numberOfBeings}
-        onChangeHandler={(e: any) => setNumberOfBeings(e.target.value)}
+        onChangeHandler={(value) => setNumberOfBeings(value)}
       />
       <p></p>
       <Arithmetic
         arithmetic={arithmetic}
-        onChangeHandler={(e: any) => setArithmetic(e.target.value)}
+        onChangeHandler={(value) => setArithmetic(value)}
       />
       <p>
         {speciesName} are from the planet {planetName} and there are{" "}
@@ -54,7 +54,7 @@ const W12MForm = () => {
       </p>
       <ReasonForSparing
         reasonForSparing={reasonForSparing}
-        onChangeHandler={(e: any) => setReasonForSparing(e.target.value)}
+        onChangeHandler={(value) => setReasonForSparing(value)}
       />
       <p></p>
       <Submit onClick={handleSubmit} />
