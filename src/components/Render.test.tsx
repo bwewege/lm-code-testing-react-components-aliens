@@ -17,7 +17,7 @@ describe("component render and value through props tests", () => {
   });
   test("NumberofBeings component should render and display value", () => {
     render(
-      <NumberofBeings numberOfBeings={8000000000} onChangeHandler={() => {}} />
+      <NumberofBeings numberOfBeings="8000000000" onChangeHandler={() => {}} />
     );
     const labelElement = screen.getByLabelText("Number of Beings:");
     const inputElement = screen.getByRole("textbox");
