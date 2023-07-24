@@ -1,6 +1,6 @@
 interface NumberofBeingsProps {
-  numberOfBeings: number;
-  onChangeHandler: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  numberOfBeings: string;
+  onChangeHandler: (v: string) => void;
 }
 
 const NumberofBeings: React.FC<NumberofBeingsProps> = ({
@@ -13,7 +13,7 @@ const NumberofBeings: React.FC<NumberofBeingsProps> = ({
       id="numberOfBeings"
       type="text"
       value={numberOfBeings}
-      onChange={onChangeHandler}
+      onChange={(e) => onChangeHandler(e.target.value)}
     />{" "}
   </>
 );

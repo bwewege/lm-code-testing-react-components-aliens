@@ -6,8 +6,6 @@ import ReasonForSparing from "./ReasonForSparing";
 import SpeciesName from "./SpeciesName";
 import Submit from "./Submit";
 
-import "@testing-library/jest-dom/extend-expect";
-
 describe("component render and value through props tests", () => {
   test("Arithmetic component should render and display value", () => {
     render(<Arithmetic arithmetic="Not 4" onChangeHandler={() => {}} />);

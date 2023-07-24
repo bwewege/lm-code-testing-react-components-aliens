@@ -1,6 +1,6 @@
 interface ArithmeticProps {
   arithmetic: string;
-  onChangeHandler: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onChangeHandler: (v: string) => void;
 }
 
 const Arithmetic: React.FC<ArithmeticProps> = ({
@@ -9,7 +9,11 @@ const Arithmetic: React.FC<ArithmeticProps> = ({
 }) => (
   <>
     <label htmlFor="arithmetic">What is 2 + 2?: </label>
-    <select id="arithmetic" value={arithmetic} onChange={onChangeHandler}>
+    <select
+      id="arithmetic"
+      value={arithmetic}
+      onChange={(e) => onChangeHandler(e.target.value)}
+    >
       <option value="4">4</option>
       <option value="Not 4">Not 4</option>
     </select>{" "}
