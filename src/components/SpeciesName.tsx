@@ -3,13 +3,13 @@
 
 interface SpeciesNameProps {
   speciesName: string;
-  onChangeSpeciesName: (v: string) => void;
+  onChangeHandler: (v: string) => void;
 }
 // This inteface defines the props expected by SpeciesName
 // onChangeSpeciesName is a function that takes an event (an input change) and returns nothing
 
 const SpeciesName: React.FC<SpeciesNameProps> = (
-  { speciesName, onChangeSpeciesName } // declares the component as a function component with the props (SpeciesNameProps)
+  { speciesName, onChangeHandler } // declares the component as a function component with the props (SpeciesNameProps)
 ) => (
   <>
     <label htmlFor="speciesName">Species Name: </label>
@@ -19,7 +19,7 @@ const SpeciesName: React.FC<SpeciesNameProps> = (
       id="speciesName"
       type="text"
       value={speciesName}
-      onChange={(e) => onChangeSpeciesName(e.target.value)}
+      onChange={(e) => onChangeHandler(e.target.value)}
     />{" "}
     {/*renders input field*/}
   </> // this renders a fragment with multiple elements (label and input)

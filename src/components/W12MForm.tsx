@@ -29,24 +29,24 @@ const W12MForm = () => {
       <W12MHeader />
       <SpeciesName
         speciesName={speciesName}
-        onChangeSpeciesName={(e: any) => setSpeciesName(e.target.value)} // Renders the SpeciesName component.
+        onChangeHandler={(e: any) => setSpeciesName(e.target.value)} // Renders the SpeciesName component.
         // Passes speciesName state variable and onChangeSpeciesName function as props.
         // OnChangeSpeciesNBame function updates the speciesName state based on input value
       />
       <p></p>
       <PlanetName
         planetName={planetName}
-        onChangePlanetName={(e: any) => setPlanetName(e.target.value)}
+        onChangeHandler={(e: any) => setPlanetName(e.target.value)}
       />
       <p></p>
       <NumberofBeings
         numberOfBeings={numberOfBeings}
-        onChangeNumberOfBeings={(e: any) => setNumberOfBeings(e.target.value)}
+        onChangeHandler={(e: any) => setNumberOfBeings(e.target.value)}
       />
       <p></p>
       <Arithmetic
         arithmetic={arithmetic}
-        onChangeArithmetic={(e: any) => setArithmetic(e.target.value)}
+        onChangeHandler={(e: any) => setArithmetic(e.target.value)}
       />
       <p>
         {speciesName} are from the planet {planetName} and there are{" "}
@@ -54,9 +54,7 @@ const W12MForm = () => {
       </p>
       <ReasonForSparing
         reasonForSparing={reasonForSparing}
-        onChangeReasonForSparing={(e: any) =>
-          setReasonForSparing(e.target.value)
-        }
+        onChangeHandler={(e: any) => setReasonForSparing(e.target.value)}
       />
       <p></p>
       <Submit onClick={handleSubmit} />
