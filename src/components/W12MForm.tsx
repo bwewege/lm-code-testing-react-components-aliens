@@ -12,7 +12,7 @@ const W12MForm = () => {
   // It returns an array with two elements: the state variable (speciesName) and a function (setSpeciesName) to update it
   const [planetName, setPlanetName] = useState<string>("");
   const [numberOfBeings, setNumberOfBeings] = useState<string>("0");
-  const [arithmetic, setArithmetic] = useState<string>("Not 4");
+  const [arithmetic, setArithmetic] = useState<string>("");
   const [reasonForSparing, setReasonForSparing] = useState<string>("");
 
   const handleSubmit = () => {
