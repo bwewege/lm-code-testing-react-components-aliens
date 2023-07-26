@@ -1,7 +1,5 @@
 // This component is a form input field
 // It is used to enter the species name
-
-import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
 interface SpeciesNameProps {
@@ -17,7 +15,7 @@ const SpeciesName: React.FC<SpeciesNameProps> = ({
 }) => {
   // declares the component as a function component with the props (SpeciesNameProps)
 
-  const [errorMessage, setErrorMessage] = useState<string | undefined>(""); // this is a hook. It declares a state variable called errorMessage and a function to set it called setErrorMessage. It initializes errorMessage to an empty string.
+  //const [errorMessage, setErrorMessage] = useState<string | undefined>(""); // this is a hook. It declares a state variable called errorMessage and a function to set it called setErrorMessage. It initializes errorMessage to an empty string.
 
   const validate: (value: string) => string | undefined = (value) => {
     if (value.length < 3 || value.length > 23) {
@@ -30,6 +28,8 @@ const SpeciesName: React.FC<SpeciesNameProps> = ({
     return undefined;
   };
 
+  const errorMessage = validate(speciesName);
+
   return (
     <>
       <label htmlFor="speciesName">Species Name: </label>
@@ -40,8 +40,6 @@ const SpeciesName: React.FC<SpeciesNameProps> = ({
         type="text"
         value={speciesName}
         onChange={(e) => {
-          const errorMessage = validate(e.target.value);
-          setErrorMessage(errorMessage);
           onChangeHandler(e.target.value); // better than onChange=onChangeHandler. wrapping simplifies for everyone else.
         }}
       />
