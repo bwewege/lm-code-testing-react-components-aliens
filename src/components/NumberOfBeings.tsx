@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
 interface NumberofBeingsProps {
@@ -10,8 +9,6 @@ const NumberofBeings: React.FC<NumberofBeingsProps> = ({
   numberOfBeings,
   onChangeHandler,
 }) => {
-  const [errorMessage, setErrorMessage] = useState<string | undefined>("");
-
   const validate: (value: string) => string | undefined = (value) => {
     if (
       parseInt(value) < 1000000000 ||
@@ -22,6 +19,8 @@ const NumberofBeings: React.FC<NumberofBeingsProps> = ({
     return undefined;
   };
 
+  const errorMessage = validate(numberOfBeings);
+
   return (
     <>
       <label htmlFor="numberOfBeings">Number of Beings: </label>
@@ -30,8 +29,6 @@ const NumberofBeings: React.FC<NumberofBeingsProps> = ({
         type="text"
         value={numberOfBeings}
         onChange={(e) => {
-          const errorMessage = validate(e.target.value);
-          setErrorMessage(errorMessage);
           onChangeHandler(e.target.value);
         }}
       />

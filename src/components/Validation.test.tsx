@@ -1,8 +1,4 @@
 import { render, screen } from "@testing-library/react";
-import Arithmetic from "./Arithmetic";
-import NumberofBeings from "./NumberOfBeings";
-import PlanetName from "./PlanetName";
-import ReasonForSparing from "./ReasonForSparing";
 import SpeciesName from "./SpeciesName";
 import ErrorMessage from "./ErrorMessage";
 

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
 interface ArithmeticProps {
@@ -10,8 +9,6 @@ const Arithmetic: React.FC<ArithmeticProps> = ({
   arithmetic,
   onChangeHandler,
 }) => {
-  const [errorMessage, setErrorMessage] = useState<string | undefined>("");
-
   const validate: (value: string) => string | undefined = (value) => {
     if (value !== "4") {
       return "Please select the correct answer. (it's 4 🤫)";
@@ -20,6 +17,8 @@ const Arithmetic: React.FC<ArithmeticProps> = ({
     return undefined;
   };
 
+  const errorMessage = validate(arithmetic);
+
   return (
     <>
       <label htmlFor="arithmetic">What is 2 + 2?: </label>
@@ -27,8 +26,6 @@ const Arithmetic: React.FC<ArithmeticProps> = ({
         id="arithmetic"
         value={arithmetic}
         onChange={(e) => {
-          const errorMessage = validate(e.target.value);
-          setErrorMessage(errorMessage);
           onChangeHandler(e.target.value);
         }}
       >

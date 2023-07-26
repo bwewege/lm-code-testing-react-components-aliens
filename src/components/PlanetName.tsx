@@ -1,4 +1,3 @@
-import { useState } from "react";
 import ErrorMessage from "./ErrorMessage";
 
 interface PlanetNameProps {
@@ -10,8 +9,6 @@ const PlanetName: React.FC<PlanetNameProps> = ({
   planetName,
   onChangeHandler,
 }) => {
-  const [errorMessage, setErrorMessage] = useState<string | undefined>("");
-
   const validate: (value: string) => string | undefined = (value) => {
     if (value.length < 2 || value.length > 49) {
       return "Planet Name must be between 2 and 49 character.";
@@ -22,6 +19,8 @@ const PlanetName: React.FC<PlanetNameProps> = ({
     return undefined;
   };
 
+  const errorMessage = validate(planetName);
+
   return (
     <>
       <label htmlFor="planetName">Planet Name: </label>
@@ -30,8 +29,6 @@ const PlanetName: React.FC<PlanetNameProps> = ({
         type="text"
         value={planetName}
         onChange={(e) => {
-          const errorMessage = validate(e.target.value);
-          setErrorMessage(errorMessage);
           onChangeHandler(e.target.value);
         }}
       />

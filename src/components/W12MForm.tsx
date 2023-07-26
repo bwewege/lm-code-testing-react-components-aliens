@@ -11,7 +11,7 @@ const W12MForm = () => {
   const [speciesName, setSpeciesName] = useState<string>(""); // Define variable using useState hook.
   // It returns an array with two elements: the state variable (speciesName) and a function (setSpeciesName) to update it
   const [planetName, setPlanetName] = useState<string>("");
-  const [numberOfBeings, setNumberOfBeings] = useState<string>("0");
+  const [numberOfBeings, setNumberOfBeings] = useState<string>("");
   const [arithmetic, setArithmetic] = useState<string>("");
   const [reasonForSparing, setReasonForSparing] = useState<string>("");
 
