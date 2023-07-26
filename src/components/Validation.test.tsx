@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import SpeciesName from "./SpeciesName";
-import ErrorMessage from "./ErrorMessage";
 
 describe("validation tests for all components", () => {
   test(`pass valid input to SpeciesName, no error should display`, () => {
