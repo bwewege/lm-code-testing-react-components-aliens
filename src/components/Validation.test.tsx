@@ -19,36 +19,36 @@ describe("validation tests for all components", () => {
     expect(errorMessage).toBeInstanceOf(Node);
   });
 
-  // test("long name, error should display", () => {
-  //   render(
-  //     <SpeciesName
-  //       speciesName="The Conquering Kingdom of Andromeda Prime"
-  //       onChangeHandler={() => {}}
-  //     />
-  //   );
-  //   const errorMessage = screen.getByText(
-  //     "Species name must be between 3 and 23 characters."
-  //   );
-  //   expect(errorMessage).toBeInTheDocument();
-  // });
+  test("long name, error should display", () => {
+    render(
+      <SpeciesName
+        speciesName="The Conquering Kingdom of Andromeda Prime"
+        onChangeHandler={() => {}}
+      />
+    );
+    const errorMessage = screen.getByText(
+      "Species name must be between 3 and 23 characters."
+    );
+    expect(errorMessage).toBeInTheDocument();
+  });
 
-  // test("numbers in name, error should display", () => {
-  //   render(
-  //     <SpeciesName speciesName="Planet 9ers" onChangeHandler={() => {}} />
-  //   );
-  //   const errorMessage = screen.getByText(
-  //     "Species name cannot contain numbers or special characters."
-  //   );
-  //   expect(errorMessage).toBeInTheDocument();
-  // });
+  test("numbers in name, error should display", () => {
+    render(
+      <SpeciesName speciesName="Planet 9ers" onChangeHandler={() => {}} />
+    );
+    const errorMessage = screen.getByText(
+      "Species name cannot contain numbers or special characters."
+    );
+    expect(errorMessage).toBeInTheDocument();
+  });
 
-  // test("special characters in name, error should display", () => {
-  //   render(
-  //     <SpeciesName speciesName="Kingdom of &%^$" onChangeHandler={() => {}} />
-  //   );
-  //   const errorMessage = screen.getByText(
-  //     "Species name cannot contain numbers or special characters."
-  //   );
-  //   expect(errorMessage).toBeInTheDocument();
-  // });
+  test("special characters in name, error should display", () => {
+    render(
+      <SpeciesName speciesName="Kingdom of &%^$" onChangeHandler={() => {}} />
+    );
+    const errorMessage = screen.getByText(
+      "Species name cannot contain numbers or special characters."
+    );
+    expect(errorMessage).toBeInTheDocument();
+  });
 });
